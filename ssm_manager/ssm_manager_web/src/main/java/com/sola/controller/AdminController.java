@@ -1,6 +1,6 @@
 package com.sola.controller;
 
-import com.sola.bean.Admin;
+import com.sola.pojo.Admin;
 import com.sola.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class AdminController {
 
 	@RequestMapping("/run")
 	@ResponseBody
-	public  Admin run(){
+	public Admin run(){
 		Admin admin = adminService.queryAdminById(1);
 		return admin;
 	}

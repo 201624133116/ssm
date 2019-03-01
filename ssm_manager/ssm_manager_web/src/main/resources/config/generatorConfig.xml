@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <classPathEntry location="E:\JavaWeb\Idea\cloud\web\WEB-INF\lib\mysql-connector-java-5.1.47.jar"/>
+
+  <context id="mybatis-generator" targetRuntime="MyBatis3">
+
+
+    <!--去除自动注解-->
+    <commentGenerator>
+      <property name="suppressDate" value="true"/>
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://127.0.0.1/microcloud"
+                    userId="root"
+                    password="123456">
+    </jdbcConnection>
+    <!--<property name="autoDelimitKeywords" value="false"/>-->
+    <!--<property name="javaFileEncoding" value="UTF-8"/>-->
+    <!--<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>-->
+    <!--<property name="xmlFormater" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>-->
+    <!--<property name="beginningDelimiter" value="`"/>-->
+    <!--<property name="endingDelimiter" value="`"/>-->
+
+    <!--整数问题类型设置-->
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!--生成模型的位置和包名-->
+    <javaModelGenerator targetPackage="com.sola.pojo" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+
+    <!--配置生成的mybatis XMl 文件的位置和包名-->
+    <sqlMapGenerator targetPackage="com.sola.mapper" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+    <!--生成DAO包的位置和包名-->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.sola.mapper" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+
+    <table tableName="admin" domainObjectName="Admin"  >
+    </table>
+    <table tableName="file" domainObjectName="File">
+    </table>
+    <table tableName="folder" domainObjectName="Folder">
+    </table>
+
+  </context>
+</generatorConfiguration>

@@ -1,12 +1,10 @@
 package com.sola.service.impl;
 
-import com.sola.bean.Admin;
 import com.sola.mapper.AdminMapper;
+import com.sola.pojo.Admin;
 import com.sola.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * Create by Administrator

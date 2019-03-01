@@ -1,6 +1,6 @@
 package com.sola.service;
 
-import com.sola.bean.Admin;
+import com.sola.pojo.Admin;
 
 /**
  * Create by Administrator

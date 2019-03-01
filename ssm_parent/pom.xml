@@ -32,6 +32,7 @@
     <commons-codec.version>1.11</commons-codec.version>
     <json.version>20180813</json.version>
     <jackson-databind.version>2.9.7</jackson-databind.version>
+    <fastjson.version>1.2.54</fastjson.version>
   </properties>
 
   <dependencyManagement>
@@ -128,12 +129,6 @@
       </dependency>
 
       <dependency>
-        <groupId>org.json</groupId>
-        <artifactId>json</artifactId>
-        <version>${json.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>${commons-lang3.version}</version>
@@ -157,10 +152,16 @@
         <version>${mysql-connector-java.version}</version>
       </dependency>
 
+      <!--<dependency>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-databind</artifactId>-->
+        <!--<version>${jackson-databind.version}</version>-->
+      <!--</dependency>-->
+
       <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson-databind.version}</version>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
       </dependency>
 
 
