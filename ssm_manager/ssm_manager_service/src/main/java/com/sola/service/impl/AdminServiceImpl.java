@@ -20,12 +20,44 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Admin queryAdminById(Integer id) {
-
-		Admin admin = adminMapper.selectByPrimaryKey(id);
+		Admin admin = null;
+		try{
+			admin = adminMapper.selectByPrimaryKey(id);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 		if(admin != null){
 			return admin;
 		}
 
 		return null;
+	}
+
+	@Override
+	public void saveAdmin(Admin admin) {
+		try {
+			adminMapper.insertSelective(admin);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void updateAdminById(Integer id, Admin admin) {
+		admin.setId(id);
+		try {
+			adminMapper.updateByPrimaryKeySelective(admin);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void deleteAdminById(Integer id) {
+		try {
+			adminMapper.deleteByPrimaryKey(id);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 }
